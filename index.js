@@ -39,9 +39,9 @@ app.post('/', async (req, res) => {
     if (!url) {
       return res.status(400).json({ message: 'URL is required' });
     }
-    if (!pattern.test(url)) {
-      return res.status(400).json({ message: 'URL is invalid' });
-    }
+    // if (!pattern.test(url)) {
+    //   return res.status(400).json({ message: 'URL is invalid' });
+    // }
     const key = shortid.generate();
     const newUrl = new Keys({ url, key });
     const resp = await newUrl.save();
